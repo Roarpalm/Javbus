@@ -40,7 +40,7 @@ def get_url(url):
     
     # 下载封面
     for i in src:
-        response = requests.get(i, headers=headers)
+        response = requests.get(i, headers=headers, stream=True)
         with open(f'{b}{code}.jpg', 'wb') as file:
             content_size = int(response.headers['content-length']) # 内容体总大小
             progress = ProgressBar(f'{code}.jpg', total=content_size, unit="KB", chunk_size=1024, run_status="正在下载", fin_status="下载完成")
@@ -55,7 +55,7 @@ def get_url(url):
 def get_img(img, b):
     name = img.split('/')[-1]
     img_filename = b + name
-    response = requests.get(img, headers=headers)
+    response = requests.get(img, headers=headers, stream=True)
     with open(img_filename, 'wb') as file:
         content_size = int(response.headers['content-length']) # 内容体总大小
         progress = ProgressBar(name, total=content_size, unit="KB", chunk_size=1024, run_status="正在下载", fin_status="下载完成")

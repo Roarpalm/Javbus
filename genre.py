@@ -69,7 +69,7 @@ async def get_info(code, date, title, link):
 
 def get_img(src, code):
     img_filename = b + code +'.jpg'
-    response = requests.get(src, headers=headers)
+    response = requests.get(src, headers=headers, stream=True)
     with open(img_filename, 'wb') as file:
         content_size = int(response.headers['content-length']) # 内容体总大小
         progress = ProgressBar(f'{code}.jpg', total=content_size, unit="KB", chunk_size=1024, run_status="正在下载", fin_status="下载完成")
