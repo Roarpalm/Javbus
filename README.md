@@ -6,3 +6,6 @@
 - 吐槽：用异步库 aiohttp 可以正常访问 javbus.com, 但在请求图片服务器 pics.javbus.com 时总是报错：
 aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host pics.javbus.com:443 ssl:default [远程计算机拒绝网络连接。]
 不知道怎么解决，无奈在下载图片部分用多线程配合 resquest
+
+## 2020年2月26日更新(1.1):
+- 新增显示进度的代码
