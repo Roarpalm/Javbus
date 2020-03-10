@@ -53,7 +53,6 @@ def download(code, date, title, link, src):
     with open(txt_filename, 'w', encoding='utf-8') as e:
         e.write(f'标题：{title}\n番号：{code}\n日期：{date}\n链接：{link}')
 
-    print('img downloading...')
     img_filename = b + code + '.jpg'
     response = requests.get(src, headers=headers)
     with open(img_filename, 'wb') as f:
