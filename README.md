@@ -5,7 +5,11 @@
 
 - 吐槽：用异步库 aiohttp 可以正常访问 javbus.com, 但在请求图片服务器 pics.javbus.com 时总是报错：
 aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host pics.javbus.com:443 ssl:default [远程计算机拒绝网络连接。]
-不知道怎么解决，无奈在下载图片部分用多线程配合 resquest
+不知道怎么解决，无奈在下载图片部分用多线程配合 requests
 
 ## 2020年2月26日更新(1.1):
 - 新增显示进度的代码
+
+## 2020年3月10日更新(1.2):
+- 重写 genre.py 完全requests 版
+- 新增 async genre.py 异步版，但是偶尔正常运行，大部分时间会有 ssl 443 错误

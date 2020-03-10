@@ -100,10 +100,10 @@ class ProgressBar(object):
         print(self.__get_info(), end=end_str)
 
 if __name__ == "__main__":
+    start = time.time()
     with open('javbus.txt', 'r') as f:
         list_url = f.read().splitlines()
     headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'}
-
-    start = time.time()
+    
     main()
     print(f'用时：{time.time()-start}秒')
